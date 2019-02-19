@@ -10,8 +10,9 @@ import datetime
 import sqlite3
 
 dbdir= "/var/lib/yum/history"
-# the os.listdir() function lists the files in arbitrary order. In the very rare case of yum having two sqlite DB files, this function 
-# will list the files in the 'dbdir' by the order of its mtime and helps in picking up the latest .sqlite DB file.
+
+# the os.listdir() function lists the files in arbitrary order. In the very rare case of yum having two sqlite DB files, the 'FilesList'
+# function will list the files in the 'dbdir' by the order of its mtime and helps in picking up the latest sqlite DB file.
 
 def filesList(path):
         mtime = lambda f: os.stat(os.path.join(path, f)).st_mtime
